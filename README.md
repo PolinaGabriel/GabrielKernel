@@ -26,37 +26,37 @@
    sudo apt install qemu-system-x86
    ```
 
-1. Ядро без ввода:
-   1.1 Открыть терминал в папке "kernel-noinput"
-   1.2 Прописать:
-       ```sh
-       $ nasm -f elf32 kernel.asm -o kasm.o
-       ```
-       ```sh
-       $ gcc -m32 -c kernel.c -o kc.o
-       ```
-       ```sh
-       $ ld -m elf_i386 -T link.ld -o kernel kasm.o kc.o
-       ```
-       ```sh
-       qemu-system-i386 -kernel kernel
-       ```
+Ядро без ввода:
+1. Открыть терминал в папке "kernel-noinput"
+2. Прописать:
+   ```sh
+   $ nasm -f elf32 kernel.asm -o kasm.o
+   ```
+   ```sh
+   $ gcc -m32 -c kernel.c -o kc.o
+   ```
+   ```sh
+   $ ld -m elf_i386 -T link.ld -o kernel kasm.o kc.o
+   ```
+   ```sh
+   qemu-system-i386 -kernel kernel
+   ```
 
-2. Ядро с вводом:
-   2.1 Открыть терминал в папке "kernel-yesinput"
-   2.2 Прописать:
-       ```sh
-       $ nasm -f elf32 kernel.asm -o kasm.o
-       ```
-       ```sh
-       $ gcc -fno-stack-protector -m32 -c kernel.c -o bin/kc.o
-       ```
-       ```sh
-       $ ld -m elf_i386 -T link.ld -o kernel kasm.o kc.o
-       ```
-       ```sh
-       qemu-system-i386 -kernel kernel
-       ```
+Ядро с вводом:
+1. Открыть терминал в папке "kernel-yesinput"
+2. Прописать:
+   ```sh
+   $ nasm -f elf32 kernel.asm -o kasm.o
+   ```
+   ```sh
+   $ gcc -fno-stack-protector -m32 -c kernel.c -o bin/kc.o
+   ```
+   ```sh
+   $ ld -m elf_i386 -T link.ld -o kernel kasm.o kc.o
+   ```
+   ```sh
+   qemu-system-i386 -kernel kernel
+   ```
 
 
 <!-- КОНТАКТЫ -->
